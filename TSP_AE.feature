@@ -5,6 +5,10 @@ Feature: AE Portal
 	So that I can quickly fill the orders with clients
 
 	Scenario: AE open job orders
-		Given I am an AE with an account on the TSP
-		When I log in
-		*Then I should see a dashboard with job orders assigned to me*
+		Given AE is notified of open job orders assigned to them
+		When they log in to the TSP
+		*Then they should see a dashboard with job orders assigned to them*
+
+
+
+		

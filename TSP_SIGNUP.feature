@@ -9,7 +9,7 @@ Feature: New Client Signup
 		When I submit my personal info
 		*Then I should be prompted to create a client account*
 
-	Scenario: Established client
+	Scenario: Established Client
 		Given I am creating an accout for a client with an established profile
 		When I create my account
 		It should be *linked to the existing client profile*
