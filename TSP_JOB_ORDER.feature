@@ -12,11 +12,22 @@ Feature: Job Order
 
 	Scenario: Submitting a Staffing Job Order
 		Given I have a general staffing requirement
-		When I submit the order details to the portal
+		When I submit the form for <JobDivision> and <JobLocation>
 		And I am an approver
-		Then <PG Division> and <Location> will be notified of my staffing order
+		Then order is submitted to <PG Division> and <Region> specified in <Form>
 
-			table
+			| JobDivision 			| JobLocation 	| PG Division 			| Region  | 
+			| Accounting & Finance  | Des Moines, IA| Accounting & Finance  | Central |
+			| Marketing & Sales  	| Davenport, IA | Marketing & Sales  	| Eastern |
+
+	Scenario: Notification of submitted job order
+		Given the job order is approved
+		When the order is submitted to <PG Division> and <Location>
+		Then the <PG Division> and <Location> will be notified
+
+		| PG Division 			| Region  | 
+		| Accounting & Finance  | Central |
+		| Marketing & Sales  	| Eastern |
 
 	Scenario: Approving a job order
 		Given I am an approver for a company
