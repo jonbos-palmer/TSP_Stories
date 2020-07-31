@@ -40,14 +40,24 @@ Feature: New User Signup
 		And <Administrator> clicks on notification
 		Then new client workflow triggered
 	
+	Scenario: New user confirmation workflow
+		Given <Administrator> contacts client
+		When client identifies approver
+		And approves user
+		Then user is validated to submit job orders that can be worked 
 
+	Scenario: Approver role request workflow
+		Given <Administrator> contacts client
+		When client authorizes approver role
+		Then user is validated to approve workable job orders
 
-
-
-	Workflows:
-		-new user, no approver
-		-new user, wanting to be approver
-		-new user, new client
+	Scenario: New client workflow
+		Given <Administrator> contacts client
+		When <Administrator> sets up client profile
+		And system sends <Client> notification
+		And <Client> receives approval notification
+		And <Client> approves client profile
+		Then system is validated to accept workable job orders from <Client>
 
 
 
