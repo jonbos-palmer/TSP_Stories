@@ -9,6 +9,12 @@ Feature: TSP admin features
 		When I edit the clients approver(s)
 		Then the new approvers should receive all new approval requests from <Division>
 
+	Scenario: Removing a user
+		Given I have admin access controls
+		And I have a request for <user> removal
+		When I delete <user account>
+		Then the <user> is removed
+
 
 Feature: New User Approval
 
