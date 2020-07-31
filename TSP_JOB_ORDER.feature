@@ -17,8 +17,8 @@ Feature: Job Order
 		Then order is submitted to <PG Division> and <Region> specified in <Form>
 
 			| JobDivision 			| JobLocation 	| PG Division 			| Region  | 
-			| Accounting & Finance  | Des Moines, IA| Accounting & Finance  | Central |
-			| Marketing & Sales  	| Davenport, IA | Marketing & Sales  	| Eastern |
+			| Accounting & Finance  	| Des Moines, IA| Accounting & Finance  	| Central |
+			| Marketing & Sales  		| Davenport, IA | Marketing & Sales  		| Eastern |
 
 	Scenario: Notification of submitted job order
 		Given the job order is approved
