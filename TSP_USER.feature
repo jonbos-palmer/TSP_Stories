@@ -17,10 +17,10 @@ Feature: Dashboards
 
 
 		| Role 		| Containers 						|
-		| User		| JobOrders	 						|
-		| AE		| JobOrders*		 				|
-		| Admin		| AdministrativeNotifications	 	|
-		| Approver	| JobOrders**						|
+		| User		| JobOrders, MPC	 				|
+		| AE		| JobOrders*, MPC		 			|
+		| Admin		| AdministrativeNotifications		|
+		| Approver	| JobOrders**, MPC					|
 
 		* - Job Orders incl Client Name
-		** - Job Orders incl. those waiting approval and all others
+		** - Job Orders incl. those awaiting approval and all others

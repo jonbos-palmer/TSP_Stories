@@ -27,3 +27,4 @@ Feature: New User Approval
 		When a user signed up for an account associated with <Client>
 		*Then <Client> <Approver> for <Division> should be notified to approve user account*
 
+\
