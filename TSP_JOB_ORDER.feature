@@ -6,28 +6,28 @@ Feature: Job Order
 
 	Scenario: Submitting a staffing order
 		Given I have a general staffing requirement
-		When I submit the order details to the portal
 		But I am not an approver
+		When I submit the order details to the portal
 		Then an approver from my company will be notified of my staffing order
 
 	Scenario: Submitting a Staffing Job Order
 		Given I have a general staffing requirement
-		When I submit the form for <JobDivision> and <JobLocation>
 		And I am an approver
+		When I submit the form for <JobDivision> and <JobLocation>
 		Then order is submitted to <PG Division> and <Region> specified in <Form>
 
-			| JobDivision 			| JobLocation 	| PG Division 			| Region  | 
-			| Accounting & Finance  	| Des Moines, IA| Accounting & Finance  	| Central |
-			| Marketing & Sales  		| Davenport, IA | Marketing & Sales  		| Eastern |
+			| JobDivision 			| JobLocation 		| PG Division 			| Region  | 
+			| Accounting & Finance  	| Des Moines, IA	| Accounting & Finance  	| Central |
+			| Marketing & Sales  		| Davenport, IA 	| Marketing & Sales  		| Eastern |
 
 	Scenario: Notification of submitted job order
 		Given the job order is approved
 		When the order is submitted to <PG Division> and <Location>
 		Then the <PG Division> and <Location> will be notified
 
-		| PG Division 			| Region  | 
-		| Accounting & Finance  | Central |
-		| Marketing & Sales  	| Eastern |
+			| PG Division 			| Region  | 
+			| Accounting & Finance  	| Central |
+			| Marketing & Sales  		| Eastern |
 
 	Scenario: Approving a job order
 		Given I am an approver for a company
