@@ -4,6 +4,8 @@ Feature: AE Portal
 	I want a concise summary of job orders in my division
 	So that I can quickly fill the orders with clients
 
+
+
 	Scenario: AE open job orders
 		Given AE is notified of open job orders assigned to them
 		When they log in to the TSP
@@ -11,4 +13,4 @@ Feature: AE Portal
 
 
 
-		
+	** who creates AE profiles **

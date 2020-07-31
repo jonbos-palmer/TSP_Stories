@@ -59,8 +59,7 @@ Feature: New User Signup
 		And <Client> approves client profile
 		Then system is validated to accept workable job orders from <Client>
 
-
-
+		
 
 
 

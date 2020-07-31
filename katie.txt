@@ -1,0 +1,47 @@
+Feature: Manage Users
+
+Background: Given a user 
+
+Scenario:
+
+Given a notification of a user role change 
+
+When a <user> changes to <role>
+
+Then the admin should set the <role> 
+
+ 
+
+
+
+User
+Role
+
+AE
+Root – can create/delete/update
+
+ 
+ 
+
+ 
+
+ Feature: Email Confirmation
+
+Background: Given the user has submitted a form
+
+Scenario:
+
+Given the user submits a <form>
+
+When the user receives a success message
+
+Then the user will receive an email confirmation
+ 
+
+
+
+Given I am an admin
+And a <RoleChange> has requested for <User>
+When I make the change in TSP
+Then user is now <Role>
+
