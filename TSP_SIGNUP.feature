@@ -52,12 +52,14 @@ Feature: New User Signup
 		Then user is validated to approve workable job orders
 
 	Scenario: New client workflow
-		Given <Administrator> contacts client
+		Given <Division> <Administrator> contacts client
 		When <Administrator> sets up client profile
+		And assigns <AE> for <Division> <Location>
 		And system sends <Client> notification
-		And <Client> receives approval notification
 		And <Client> approves client profile
 		Then system is validated to accept workable job orders from <Client>
+		And <Client> receives approval notification
+		
 
 		
 
