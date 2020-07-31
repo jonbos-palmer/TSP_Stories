@@ -9,6 +9,22 @@ Feature: TSP admin features
 		When I edit the clients approver(s)
 		Then the new approvers should receive all new approval requests from <Division>
 
+		| Division 							|
+		| Accounting & Finance 				|
+		| Administration & Customer Service |
+		| Engineering & Manufacturing 		|
+		| Human Resources 					|
+		| Information Technology			|
+		| Insurance 						|
+		| Marketing & Sales					|
+		| Mortgage & Banking 				|
+		| Retained Executive Search 		|
+		| Managed Services 					|
+		| Candidate Evaluation 				|
+		| Outplacement Services 			|
+
+
+
 	Scenario: Removing a user
 		Given I have admin access controls
 		And I have a request for <user> removal

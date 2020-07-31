@@ -16,6 +16,9 @@ Feature: Email Notifications
 		Then I receive an email with the job order details
 		And the email contains a link to approve the job order
 
+		| Division | Client    |
+		| IT 	   | ClientOne |
+
 
 	Scenario: User receives job order approval email
 		Given I am a verified user
@@ -34,3 +37,7 @@ Feature: Email Notifications
 		Then I receive an email notification
 		And the email contains the details of the job order
 		
+
+		| Division 				    | Location  | 
+		| Accounting & Finance  	| Central   |
+		| Marketing & Sales  		| Eastern   |
