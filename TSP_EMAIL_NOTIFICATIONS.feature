@@ -3,7 +3,6 @@ Feature: Email Notifications
 	I want to receive email notifications from the application
 	So that I can [have a record/be notified]
 
-
 	Scenario: User receives job order submission email
 		Given I am a user with a verified account
 		And I have submitted a job order
