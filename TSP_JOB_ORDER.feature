@@ -54,8 +54,8 @@ Feature: Job Order
 		Then the <PG Division> and <Location> will be notified
 
 			| PG Division 				| Region  |
-			| Accounting & Finance  	| Central |
-			| Marketing & Sales  		| Eastern |
+			| Accounting & Finance  		| Central |
+			| Marketing & Sales  			| Eastern |
 
 	Scenario: Approving a job order
 		Given I am an approver for a company
@@ -65,7 +65,9 @@ Feature: Job Order
 		But if I deny the job order
 		Then *requesting user gets a notice of denial and job order is marked denied*
 
-			table
+			| PG Division 			| Location	|
+			| Accounting & Finance   	| Central  	|
+			| Marketing & Sales  		| Eastern  	|
 
 	Scenario: Routing a job order
 		Given an approved job order is submitted to a <PG Division> and <Location>
@@ -74,5 +76,10 @@ Feature: Job Order
 		But if the client does not have an assigned AE for the <PG Division> and <Location>
 		Then the job order is routed to <PG Division> and <Location> <Leader>
 
-			table
+			
+		| PG Division 		      	| Location	|  User 	| Leader 	|
+		| Accounting & Finance 		| Central  	| user1 	| ------- 	|
+		| Marketing & Sales       	| Eastern  	| user  	| Leader 	|
+
+		
 
