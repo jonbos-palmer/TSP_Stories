@@ -18,6 +18,10 @@ Feature: Job Order
 
 		*** if client does not require approver, should every user on that account be set as approver? ***
 
+			| JobDivision 				| JobLocation		| 
+			| Accounting & Finance  	| Des Moines, IA	|
+			| Marketing & Sales  		| Davenport, IA 	|
+
 	Scenario: New user from new client sends job order
 		Given I am a user [?from a new client?]
 		And my account is not verified
@@ -44,18 +48,18 @@ Feature: Job Order
 		When I submit the form for <JobDivision> and <JobLocation>
 		Then order is submitted to <PG Division> and <Region> specified in <Form>
 
-			| JobDivision 				| JobLocation 		| PG Division 				| Region  | 
-			| Accounting & Finance  	| Des Moines, IA	| Accounting & Finance  	| Central |
-			| Marketing & Sales  		| Davenport, IA 	| Marketing & Sales  		| Eastern |
+			| JobDivision 				| JobLocation 		| PG Division 				| Region  | Form 		| 
+			| Accounting & Finance  	| Des Moines, IA	| Accounting & Finance  	| Central | Base Order  |
+			| Marketing & Sales  		| Davenport, IA 	| Marketing & Sales  		| Eastern | Base Order  |
 
 	Scenario: Notification of submitted job order
 		Given the job order is approved
 		When the order is submitted to <PG Division> and <Location>
 		Then the <PG Division> and <Location> will be notified
 
-			| PG Division 				| Region  |
-			| Accounting & Finance  		| Central |
-			| Marketing & Sales  			| Eastern |
+			| PG Division 				| Location |
+			| Accounting & Finance  	| Central  |
+			| Marketing & Sales  		| Eastern  |
 
 	Scenario: Approving a job order
 		Given I am an approver for a company
@@ -65,7 +69,7 @@ Feature: Job Order
 		But if I deny the job order
 		Then *requesting user gets a notice of denial and job order is marked denied*
 
-			| PG Division 			| Location	|
+			| PG Division 				| Location	|
 			| Accounting & Finance   	| Central  	|
 			| Marketing & Sales  		| Eastern  	|
 
@@ -77,9 +81,9 @@ Feature: Job Order
 		Then the job order is routed to <PG Division> and <Location> <Leader>
 
 			
-		| PG Division 		      	| Location	|  User 	| Leader 	|
-		| Accounting & Finance 		| Central  	| user1 	| ------- 	|
-		| Marketing & Sales       	| Eastern  	| user  	| Leader 	|
+			| PG Division 		      	| Location	|  User 	| Leader 	|
+			| Accounting & Finance 		| Central  	| user1 	| ------- 	|
+			| Marketing & Sales       	| Eastern  	| user  	| Leader 	|
 
 		
 

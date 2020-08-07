@@ -56,6 +56,8 @@ Feature: Email Notifications
 		And the notification contains the details of the job order
 		
 
-		| Division 				    | Location  | 
-		| Accounting & Finance  	| Central   |
-		| Marketing & Sales  		| Eastern   |
+		| Client 	| Division 				    | Location  | Type 			| 
+		| ClientOne | Accounting & Finance  	| Central   | System		|
+		| ClientOne | Marketing & Sales  		| Eastern   | Email		 	|
+		| ClientTwo | Marketing & Sales  		| Eastern   | Text	 		|
+		| ClientTwo | Marketing & Sales  		| Central   | Exception 	|

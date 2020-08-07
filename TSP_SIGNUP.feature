@@ -26,6 +26,14 @@ Feature: New User Signup
 		And <Administrator> clicks on notification
 		Then new user confirmation workflow triggered
 
+		| Division 							| Location | Administrator    |
+		| Marketing & Sales					| Central  | Administrator1   | 
+		| Mortgage & Banking 				| Eastern  | Administrator2   | 
+		| Retained Executive Search 		| Central  | Administrator3   |
+		| Managed Services 					| Central  | Administrator4   |
+		| Candidate Evaluation 				| Eastern  | Administrator5   |
+		| Outplacement Services 			| Eastern  | Administrator6   |
+
 	Scenario: A new user who wants to be an approver
 		Given new user has identified <Division> & <Location> to submit job orders
 		And user has requested approver role
@@ -33,23 +41,49 @@ Feature: New User Signup
 		And <Administrator> clicks on notification
 		Then approver role request workflow triggered
 
+		| Division 							| Location | Administrator    |
+		| Marketing & Sales					| Central  | Administrator1   | 
+		| Mortgage & Banking 				| Eastern  | Administrator2   | 
+		| Retained Executive Search 		| Central  | Administrator3   |
+		| Managed Services 					| Central  | Administrator4   |
+		| Candidate Evaluation 				| Eastern  | Administrator5   |
+		| Outplacement Services 			| Eastern  | Administrator6   |
+
 	Scenario: A new user from a new client
 		Given new user has identified <Division> & <Location> to submit job orders
 		And user is not from an established client
 		When <Administrator> receives notification
 		And <Administrator> clicks on notification
 		Then new client workflow triggered
+
+		| Division 							| Location | Administrator    |
+		| Marketing & Sales					| Central  | Administrator1   | 
+		| Mortgage & Banking 				| Eastern  | Administrator2   | 
+		| Retained Executive Search 		| Central  | Administrator3   |
+		| Managed Services 					| Central  | Administrator4   |
+		| Candidate Evaluation 				| Eastern  | Administrator5   |
+		| Outplacement Services 			| Eastern  | Administrator6   |
 	
 	Scenario: New user confirmation workflow
 		Given <Administrator> contacts client
 		When client identifies approver
 		And approves user
-		Then user is validated to submit job orders that can be worked 
+		Then user is validated to submit job orders that can be worked
+
+		  | Administrator   |
+		  | Administrator1  | 
+		  | Administrator2  | 
+		  | Administrator3  |
 
 	Scenario: Approver role request workflow
 		Given <Administrator> contacts client
 		When client authorizes approver role
 		Then user is validated to approve workable job orders
+
+		  | Administrator   |
+		  | Administrator1  | 
+		  | Administrator2  | 
+		  | Administrator3  |
 
 	Scenario: New client workflow
 		Given <Division> <Administrator> contacts client
@@ -59,6 +93,14 @@ Feature: New User Signup
 		And <Client> approves client profile
 		Then system is validated to accept workable job orders from <Client>
 		And <Client> receives approval notification
+
+		| Division 							| Location | Administrator    | AE   | Client      |
+		| Marketing & Sales					| Central  | Administrator1   | AE 1 | ClientOne   |
+		| Mortgage & Banking 				| Eastern  | Administrator2   | AE 2 | ClientTwo   |
+		| Retained Executive Search 		| Central  | Administrator3   | AE 3 | ClientThree |
+		| Managed Services 					| Central  | Administrator4   | AE 4 | ClientFour  |
+		| Candidate Evaluation 				| Eastern  | Administrator5   | AE 5 | ClientOne   |
+		| Outplacement Services 			| Eastern  | Administrator6   | AE 6 | ClientTwo   |
 		
 
 		

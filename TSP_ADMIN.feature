@@ -30,3 +30,7 @@ Feature: TSP admin features
 		And I have a request for <user> removal
 		When I delete <user account>
 		Then the <user> is removed
+
+		| user  | user account     |
+		| user1 | account/[user1Id] |
+		| user2 | account/[user2Id] |
